@@ -31,8 +31,8 @@ public class Server {
             e.printStackTrace();
         }
     } 
-    public static void main(String[] args) {
-        ServerSocket serverSocket = new ServerSocket(port 5000);
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(5000);
         Server server =new Server(serverSocket);
         server.startServer();
     }

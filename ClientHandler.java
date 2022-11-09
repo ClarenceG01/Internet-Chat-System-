@@ -30,8 +30,8 @@ public class ClientHandler implements Runnable{
         String messageFromClient;
         while (socket.isConnected()){
             try{
-                messageFromclient=bufferedReader.readLine();
-                broadcastMessage(messageFromclient);
+                messageFromClient=bufferedReader.readLine();
+                broadcastMessage(messageFromClient);
             }catch(IOException e){
                 closeEverything(socket, bufferedReader ,bufferedWriter);
                 break;
@@ -54,7 +54,7 @@ public class ClientHandler implements Runnable{
     }
     public void removeClientHandler(){
         clientHandlers.remove(this);
-        broadcastMessage("Server:"+ clientUsername +"has left the chat");
+        broadcastMessage("Server:"+ clientUsername +" "+"has left the chat");
     }
     public void closeEverything(Socket socket,BufferedReader bufferedReader,BufferedWriter bufferedWriter){
         removeClientHandler();
